@@ -1,27 +1,22 @@
 # clipsog / assets
 
-Static assets (logos, images, icons) for clipsog apps. Host this repo on **Render** as a static site or use **GitHub raw URLs** until then.
+Static assets for **Value Scheduler** (the scheduler platform) and other clipsog apps. Use **GitHub raw URLs** or host this repo as a **Render** static site.
 
-## Layout
+## Value Scheduler (`value-scheduler/`)
 
-| Path | Description |
+| File | Description |
 |------|-------------|
-| `hoopify/logo.png` | Hoopify brand logo |
+| `value-scheduler/favicon.svg` | App favicon |
+| `value-scheduler/icons.svg` | Icon sprite / set used by the app |
 
-Add more folders per app or shared `common/` as needed.
+These files mirror the Value Scheduler app’s `public/` directory so you can point production builds at fixed URLs.
 
-## URLs (GitHub)
+### Raw URLs (GitHub, branch `main`)
 
-After push, stable raw links (replace `main` with your default branch if different):
+- `https://raw.githubusercontent.com/clipsog/assets/main/value-scheduler/favicon.svg`
+- `https://raw.githubusercontent.com/clipsog/assets/main/value-scheduler/icons.svg`
 
-- **Hoopify logo:** `https://raw.githubusercontent.com/clipsog/assets/main/hoopify/logo.png`
+## Render & Supabase
 
-Use these in HTML/CSS/JS, or point a CDN (e.g. jsDelivr) at the same path if you prefer caching.
-
-## Render (next step)
-
-Deploy as a **Static Site**: root directory `/`, build command empty, publish directory `.`. Set the public URL in each app’s config for production asset base URL.
-
-## Supabase (later)
-
-Application data (users, bookings, etc.) lives in Supabase Postgres—not in this repo. This repo is **files only**.
+- **Render:** deploy this repo as a static site and use that origin in the scheduler app for production asset URLs.
+- **Supabase:** application data is separate; this repo holds **static files only**.
